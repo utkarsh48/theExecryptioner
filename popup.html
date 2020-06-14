@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .inputParent{
+        display: block;
+      }
+      .inputParent *{
+        display: block;
+        margin: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="inputParent">
+        <input class="inputFile" type="file">
+        <input type="password" class="inpPass" placeholder="Password">
+        <button class="subBtn">Submit</button>
+      </div>
+      <div class="resultParent">
+        <textarea class="result"></textarea>
+      </div>
+    </main>
+    <script src="sjcl.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>
