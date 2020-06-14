@@ -1,7 +1,3 @@
-// loadstart: 0 bytes transferred
-// progress: 80454 bytes transferred
-// load: 80454 bytes transferred
-// loadend: 80454 bytes transferred
 
 console.log("begin");
 let inpFileElement = document.querySelector(".inputFile");
