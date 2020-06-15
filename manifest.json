@@ -1,8 +1,8 @@
 {
-  "name": "Getting Started Example",
+  "name": "The Execryptioner",
   "version": "1.0",
   "description": "Build an Extension!",
-  "permissions": ["activeTab","declarativeContent", "storage"],
+  "permissions": [],
   "background": {
     "scripts": ["background.js"],
     "persistent": false

@@ -1,5 +1,18 @@
+.optionBlock {
+  display: block;
+}
+
 main {
-  background-color: #b6b6b6;
+  font-family: sans-serif;
+  background-color: #ccc;
   padding: 1em;
+}
+
+main .encrypt {
+  display: block;
+}
+
+main .decrypt {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

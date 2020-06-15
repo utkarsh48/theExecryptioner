@@ -5,9 +5,21 @@
   </head>
   <body>
     <main>
+
+      <div class="selector">
+        <label for="encryptSelector"><input id="encryptSelector" value="enc" name="mode" type="radio" checked>Encrypt</label>
+        <label for="decryptSelector"><input id="decryptSelector" value="dec" name="mode" type="radio">Decrypt</label>
+      </div>
+
+
       <div class="encrypt">
+        <span class="heading">Encrypt</span>
         <div class="inputParent0">
           <input class="inputFile0" type="file">
+          <section class="noFileInput0">
+            <div class="noFileButton0"></div>
+            <textarea class="fileAlternative0" placeholder="Text to encrypt"></textarea>
+          </section>
           <input type="password" class="inpPass0" placeholder="Password">
           <button class="subBtn0">Submit</button>
         </div>
@@ -16,10 +28,17 @@
           <a class="resultSave0" href="">Save as file</a>
         </div>
       </div>
-      <hr>
+
+
+      
       <div class="decrypt">
+        <span class="heading">Decrypt</span>
         <div class="inputParent1">
           <input class="inputFile1" type="file">
+          <section class="noFileInput1">
+            <div class="noFileButton1"></div>
+            <textarea class="fileAlternative1" placeholder="Text to decrypt"></textarea>
+          </section>
           <input type="password" class="inpPass1" placeholder="Password">
           <button class="subBtn1">Submit</button>
         </div>
