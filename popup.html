@@ -7,25 +7,31 @@
     <main>
 
       <div class="selector">
-        <label for="encryptSelector"><input id="encryptSelector" value="enc" name="mode" type="radio" checked>Encrypt</label>
-        <label for="decryptSelector"><input id="decryptSelector" value="dec" name="mode" type="radio">Decrypt</label>
+        <div class="selectorChild">
+          <label for="encryptSelector"><input id="encryptSelector" value="enc" name="mode" type="radio" checked>Encrypt</label>
+          <label for="decryptSelector"><input id="decryptSelector" value="dec" name="mode" type="radio">Decrypt</label>
+        </div>
       </div>
 
 
       <div class="encrypt">
         <span class="heading">Encrypt</span>
         <div class="inputParent0">
-          <input class="inputFile0" type="file">
           <section class="noFileInput0">
-            <div class="noFileButton0"></div>
             <textarea class="fileAlternative0" placeholder="Text to encrypt"></textarea>
+            <div class="nextSectionExpand0"><img src="/images/text-document-add.svg"></div>
+            <section class="fileInpParent">
+              <input class="inputFile0" type="file">
+            </section>
           </section>
           <input type="password" class="inpPass0" placeholder="Password">
-          <button class="subBtn0">Submit</button>
         </div>
         <div class="resultEncParent">
-          <textarea class="result0"></textarea>
-          <a class="resultSave0" href="">Save as file</a>
+          <section class="simpleButtons">
+            <button class="subBtn0">Submit</button>
+            <a class="resultSave0" href="">Save as file</a>
+          </section>
+          <textarea class="result0" placeholder="Result"></textarea>
         </div>
       </div>
 
@@ -34,17 +40,21 @@
       <div class="decrypt">
         <span class="heading">Decrypt</span>
         <div class="inputParent1">
-          <input class="inputFile1" type="file">
           <section class="noFileInput1">
-            <div class="noFileButton1"></div>
             <textarea class="fileAlternative1" placeholder="Text to decrypt"></textarea>
+            <div class="nextSectionExpand1"><img src="/images/text-document-add.svg"></div>
+            <section class="fileInpParent">
+              <input class="inputFile1" type="file">
+            </section>
           </section>
           <input type="password" class="inpPass1" placeholder="Password">
-          <button class="subBtn1">Submit</button>
         </div>
         <div class="resultDecParent">
-          <textarea class="result1"></textarea>
-          <a class="resultSave1" href="">Save as file</a>
+          <section class="simpleButtons">
+            <button class="subBtn1">Submit</button>
+            <a class="resultSave1" href="">Save as file</a>
+          </section>
+          <textarea class="result1" placeholder="Result"></textarea>
         </div>
       </div>
     </main>

@@ -1,5 +1,5 @@
 //Copyright 2019 bitwiseshiftleft
-//(function(){
+(function(){
   /////////ENCRYPTION
   
   //SELECTOR
@@ -56,33 +56,36 @@
   
   subBtn0.addEventListener("click",(e)=>{
     //Validation
-    if(password0.value===""){
-    alert("Enter a valid password");
-    return;
-    }
-    if(fileAlternative0.value==="" && !inpFileElement0.files[0] ){
-      alert("No text provided or file Selected");
+    try{
+      if(password0.value===""){
+      alert("Enter a valid password");
       return;
-    }
-    else{
-      if(!inpFileElement0.files[0])
-      {
-        toEncrypt0 = fileAlternative0.value;
       }
-      flag0=true;
-    }
-    if(flag0){
-      encryptedFile0 = sjcl.encrypt(password0.value,toEncrypt0);
-      result0.value = encryptedFile0;
+      if(fileAlternative0.value==="" && !inpFileElement0.files[0] ){
+        alert("No text provided or file Selected");
+        return;
+      }
+      else{
+        if(!inpFileElement0.files[0])
+        {
+          toEncrypt0 = fileAlternative0.value;
+        }
+        flag0=true;
+      }
+      if(flag0){
+        encryptedFile0 = sjcl.encrypt(password0.value,toEncrypt0);
+        result0.value = encryptedFile0;
 
-      ///creating a file
-      let downloadable0 =  new File([encryptedFile0],"encrypted.txt",{type: "text/plain"});
+        ///creating a file
+        let downloadable0 =  new File([encryptedFile0],"encrypted.txt",{type: "text/plain"});
 
-      resultSave0.setAttribute("href",URL.createObjectURL(downloadable0));
-      resultSave0.setAttribute("download","encrypted.txt");
+        resultSave0.setAttribute("href",URL.createObjectURL(downloadable0));
+        resultSave0.setAttribute("download","encrypted.txt");
+      }
     }
-    else{
-      alert("Oops! An error has Occured, try again");
+    catch(e){
+      console.log(e);
+      alert(e);
     }
 });
 
@@ -119,34 +122,37 @@ inpFileElement1.addEventListener("input",(e)=>{
 
 subBtn1.addEventListener("click",(e)=>{
   //Validation
-  if(password1.value===""){
-    alert("Enter a valid password1");
-    return;
-  };
-  if(fileAlternative1.value==="" && !inpFileElement1.files[0] ){
-    alert("No text provided or file Selected");
-    return;
-  }
-  else{
-    if(!inpFileElement1.files[0])
-    {
-      toDecrypt1 = fileAlternative1.value;
+  try{
+    if(password1.value===""){
+      alert("Enter a valid password1");
+      return;
+    };
+    if(fileAlternative1.value==="" && !inpFileElement1.files[0] ){
+      alert("No text provided or file Selected");
+      return;
     }
-    flag1=true;
-  }
-  if(flag1){
-    decryptedFile1 = sjcl.decrypt(password1.value,toDecrypt1);
-    result1.value = decryptedFile1;
+    else{
+      if(!inpFileElement1.files[0])
+      {
+        toDecrypt1 = fileAlternative1.value;
+      }
+      flag1=true;
+    }
+    if(flag1){
+      decryptedFile1 = sjcl.decrypt(password1.value,toDecrypt1);
+      result1.value = decryptedFile1;
 
-    ///creating a file
-    let downloadable1 =  new File([decryptedFile1],"decrypted.txt",{type: "text/plain"});
+      ///creating a file
+      let downloadable1 =  new File([decryptedFile1],"decrypted.txt",{type: "text/plain"});
 
-    resultSave1.setAttribute("href",URL.createObjectURL(downloadable1));
-    resultSave1.setAttribute("download","decrypted.txt");
+      resultSave1.setAttribute("href",URL.createObjectURL(downloadable1));
+      resultSave1.setAttribute("download","decrypted.txt");
+    }
   }
-  else{
-    alert("Oops! An error has Occured, try again");
+  catch(e){
+    console.log(e);
+    alert(e);
   }
 });
 
-// })();
+})();
