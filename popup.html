@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      .inputParent{
-        display: block;
-      }
-      .inputParent *{
-        display: block;
-        margin: 1em;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <main>
-      <div class="inputParent">
-        <input class="inputFile" type="file">
-        <input type="password" class="inpPass" placeholder="Password">
-        <button class="subBtn">Submit</button>
+      <div class="encrypt">
+        <div class="inputParent0">
+          <input class="inputFile0" type="file">
+          <input type="password" class="inpPass0" placeholder="Password">
+          <button class="subBtn0">Submit</button>
+        </div>
+        <div class="resultEncParent">
+          <textarea class="result0"></textarea>
+        </div>
       </div>
-      <div class="resultParent">
-        <textarea class="result"></textarea>
+      <hr>
+      <div class="decrypt">
+        <div class="inputParent1">
+          <input class="inputFile1" type="file">
+          <input type="password" class="inpPass1" placeholder="Password">
+          <button class="subBtn1">Submit</button>
+        </div>
+        <div class="resultDecParent">
+          <textarea class="result1"></textarea>
+        </div>
       </div>
     </main>
     <script src="sjcl.js"></script>
