@@ -16,10 +16,10 @@ textarea, input[type=password] {
 main {
   min-width: 300px;
   font-size: 1em;
-  color: #001d49;
+  color: #3a3c3f;
   font-family: sans-serif;
   background-color: #a8c2ff;
-  background: linear-gradient(135deg, rgba(255, 125, 60, 0.5) 0%, rgba(255, 125, 60, 0.8) 35%, #ddd 35%, #eee 85%, rgba(255, 125, 60, 0.8) 95%);
+  background: linear-gradient(135deg, rgba(255, 125, 60, 0.5) 0%, #3a3ca0 100%);
   padding: 1em;
 }
 
@@ -27,6 +27,7 @@ main .selector {
   display: block;
   text-align: center;
   padding-top: 1em;
+  font-size: 1.5em;
 }
 
 main .selector .selectorChild * {
@@ -43,8 +44,12 @@ main .heading {
   text-transform: uppercase;
   display: block;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2.5em;
   padding: 1.2em;
+}
+
+main .heading .underline {
+  text-decoration: underline;
 }
 
 main .inputParent0 .noFileInput0, main .inputParent0 .noFileInput1, main .inputParent1 .noFileInput0, main .inputParent1 .noFileInput1 {
@@ -95,28 +100,12 @@ main .inputParent0 .noFileInput0 .fileInpParent input::before, main .inputParent
   opacity: 0.7;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("/images/text-document-add.svg");
-}
-
-main .inputParent0 .noFileInput0 .fileInpParent input::after, main .inputParent0 .noFileInput1 .fileInpParent input::after, main .inputParent1 .noFileInput0 .fileInpParent input::after, main .inputParent1 .noFileInput1 .fileInpParent input::after {
-  visibility: visible;
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
+  background-image: url("/images/plus-round.svg");
+  background-position: center;
 }
 
 main .inputParent0 .noFileInput0 .fileInpParent input:hover::before, main .inputParent0 .noFileInput1 .fileInpParent input:hover::before, main .inputParent1 .noFileInput0 .fileInpParent input:hover::before, main .inputParent1 .noFileInput1 .fileInpParent input:hover::before {
   opacity: 1;
-}
-
-main .inputParent0 .noFileInput0 .fileInpParent input:hover::after, main .inputParent0 .noFileInput1 .fileInpParent input:hover::after, main .inputParent1 .noFileInput0 .fileInpParent input:hover::after, main .inputParent1 .noFileInput1 .fileInpParent input:hover::after {
-  top: -4px;
-  opacity: 1;
-  border-bottom: 2px solid black;
 }
 
 main .inpPass0, main .inpPass1, main .result0, main .result1 {
@@ -130,8 +119,9 @@ main .encrypt .resultEncParent .simpleButtons, main .encrypt .resultDecParent .s
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 90%;
 }
 
@@ -143,22 +133,22 @@ main .encrypt .resultEncParent .simpleButtons *, main .encrypt .resultDecParent 
   text-decoration: none;
   border: 1px solid #dfe8ff;
   outline: none;
-  background-color: #001d49;
+  background-color: #3a3c3f;
   color: #dfe8ff;
 }
 
 main .encrypt .resultEncParent .simpleButtons *:hover, main .encrypt .resultDecParent .simpleButtons *:hover, main .decrypt .resultEncParent .simpleButtons *:hover, main .decrypt .resultDecParent .simpleButtons *:hover {
-  background-color: #003380;
+  background-color: #2a2c2f;
 }
 
 main .encrypt .resultEncParent .disabled, main .encrypt .resultDecParent .disabled, main .decrypt .resultEncParent .disabled, main .decrypt .resultDecParent .disabled {
-  background-color: cadetblue;
-  color: white;
+  background-color: #cacaca;
+  color: #777777;
 }
 
 main .encrypt .resultEncParent .disabled:hover, main .encrypt .resultDecParent .disabled:hover, main .decrypt .resultEncParent .disabled:hover, main .decrypt .resultDecParent .disabled:hover {
-  background-color: cadetblue;
-  color: white;
+  background-color: #cacaca;
+  color: #777777;
 }
 
 main .encrypt .resultEncParent .result-n-copy, main .encrypt .resultDecParent .result-n-copy, main .decrypt .resultEncParent .result-n-copy, main .decrypt .resultDecParent .result-n-copy {
@@ -170,16 +160,17 @@ main .encrypt .resultEncParent .result-n-copy .result0, main .encrypt .resultEnc
 }
 
 main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn0, main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn1, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn0, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn1, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn0, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn1, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn0, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn1 {
-  background-color: cadetblue;
-  padding: 0.5em;
+  background-color: #777777;
+  padding: 0.6em;
+  border: 1px solid #cacaca;
   border-radius: 50%;
   position: absolute;
-  bottom: 5%;
-  right: 5%;
+  bottom: 7%;
+  right: 7%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 2em;
-  width: 2em;
+  height: 2.5em;
+  width: 2.5em;
 }
 
 main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn0 img, main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn1 img, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn0 img, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn1 img, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn0 img, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn1 img, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn0 img, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn1 img {

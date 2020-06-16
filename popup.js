@@ -55,7 +55,7 @@
 
   });
   document.addEventListener("input",()=>{
-    if(password0.value==="" || (fileAlternative0.value==="" || inpFileElement0.files[0])){
+    if(password0.value==="" || (fileAlternative0.value==="" && !inpFileElement0.files[0])){
       subBtn0.classList.add("disabled");
       resultSave0.classList.add("disabled");
       resultCopy0.classList.add("hide");
@@ -71,7 +71,7 @@
       alert("Enter a valid password");
       return;
       }
-      if(fileAlternative0.value==="" || inpFileElement0.files[0] ){
+      if(fileAlternative0.value==="" && !inpFileElement0.files[0] ){
         alert("No text provided or file Selected");
         return;
       }
@@ -103,7 +103,8 @@
     }
   });
   resultCopy0.addEventListener("click",()=>{
-
+    result0.select();
+    document.execCommand("copy");
   })
 
 
@@ -119,7 +120,7 @@
   let subBtn1 = document.querySelector(".subBtn1");
   let result1 = document.querySelector(".result1");
   let resultSave1 = document.querySelector(".resultSave1");
-  let resultCopy1 = document.querySelector(".floatingCopyBtn0");
+  let resultCopy1 = document.querySelector(".floatingCopyBtn1");
   let toDecrypt1 ="";
   let decryptedFile1 = "";
   let flag1 = false;
@@ -138,7 +139,7 @@
     reader1.readAsText(e.target.files[0]);
   });
   document.addEventListener("input",()=>{
-    if(password1.value==="" || (fileAlternative1.value==="" || inpFileElement1.files[0])){
+    if(password1.value==="" || (fileAlternative1.value==="" && !inpFileElement1.files[0])){
       subBtn1.classList.add("disabled");
       resultSave1.classList.add("disabled");
       resultCopy1.classList.add("hide");
@@ -154,7 +155,7 @@
         alert("Enter a valid password1");
         return;
       };
-      if(fileAlternative1.value==="" || inpFileElement1.files[0] ){
+      if(fileAlternative1.value==="" && !inpFileElement1.files[0] ){
         alert("No text provided or file Selected");
         return;
       }
@@ -186,7 +187,8 @@
     }
   });
   resultCopy1.addEventListener("click",()=>{
-
+    result1.select();
+    document.execCommand("copy");
   })
 
 })();
