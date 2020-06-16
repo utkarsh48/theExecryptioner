@@ -1,6 +1,6 @@
 
 # theExecryptioner
-This is a chrome extension for encrypting text files and vice-versa.
+This is a chrome extension for encrypting text files and vice-versa. This extension works offline.
 
 ## How to Use
 - Select encrypt or decrypt as per requirement.
