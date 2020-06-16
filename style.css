@@ -5,11 +5,16 @@
   padding: 0;
 }
 
+textarea, input[type=password] {
+  padding: 0.25rem;
+}
+
 .optionBlock {
   display: block;
 }
 
 main {
+  min-width: 300px;
   font-size: 1em;
   color: #001d49;
   font-family: sans-serif;
@@ -43,7 +48,6 @@ main .heading {
 }
 
 main .inputParent0 .noFileInput0, main .inputParent0 .noFileInput1, main .inputParent1 .noFileInput0, main .inputParent1 .noFileInput1 {
-  position: relative;
   width: 90%;
   margin: auto;
   display: -webkit-box;
@@ -53,27 +57,66 @@ main .inputParent0 .noFileInput0, main .inputParent0 .noFileInput1, main .inputP
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 1em auto;
+  overflow: visible;
 }
 
 main .inputParent0 .noFileInput0 .fileAlternative0, main .inputParent0 .noFileInput0 .fileAlternative1, main .inputParent0 .noFileInput1 .fileAlternative0, main .inputParent0 .noFileInput1 .fileAlternative1, main .inputParent1 .noFileInput0 .fileAlternative0, main .inputParent1 .noFileInput0 .fileAlternative1, main .inputParent1 .noFileInput1 .fileAlternative0, main .inputParent1 .noFileInput1 .fileAlternative1 {
   display: inline-block;
-  width: 85%;
+  -ms-flex-preferred-size: 85%;
+      flex-basis: 85%;
+  height: 3em;
 }
 
-main .inputParent0 .noFileInput0 .nextSectionExpand0, main .inputParent0 .noFileInput0 .nextSectionExpand1, main .inputParent0 .noFileInput1 .nextSectionExpand0, main .inputParent0 .noFileInput1 .nextSectionExpand1, main .inputParent1 .noFileInput0 .nextSectionExpand0, main .inputParent1 .noFileInput0 .nextSectionExpand1, main .inputParent1 .noFileInput1 .nextSectionExpand0, main .inputParent1 .noFileInput1 .nextSectionExpand1 {
+main .inputParent0 .noFileInput0 .fileInpParent, main .inputParent0 .noFileInput1 .fileInpParent, main .inputParent1 .noFileInput0 .fileInpParent, main .inputParent1 .noFileInput1 .fileInpParent {
   display: inline-block;
-  text-align: center;
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  opacity: 1;
+  overflow: hidden;
+}
+
+main .inputParent0 .noFileInput0 .fileInpParent input, main .inputParent0 .noFileInput1 .fileInpParent input, main .inputParent1 .noFileInput0 .fileInpParent input, main .inputParent1 .noFileInput1 .fileInpParent input {
+  margin: auto;
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 2em;
+  visibility: hidden;
+}
+
+main .inputParent0 .noFileInput0 .fileInpParent input::before, main .inputParent0 .noFileInput1 .fileInpParent input::before, main .inputParent1 .noFileInput0 .fileInpParent input::before, main .inputParent1 .noFileInput1 .fileInpParent input::before {
+  visibility: visible;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("/images/text-document-add.svg");
+}
+
+main .inputParent0 .noFileInput0 .fileInpParent input::after, main .inputParent0 .noFileInput1 .fileInpParent input::after, main .inputParent1 .noFileInput0 .fileInpParent input::after, main .inputParent1 .noFileInput1 .fileInpParent input::after {
+  visibility: visible;
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0.7;
 }
 
-main .inputParent0 .noFileInput0 .nextSectionExpand0 img, main .inputParent0 .noFileInput0 .nextSectionExpand1 img, main .inputParent0 .noFileInput1 .nextSectionExpand0 img, main .inputParent0 .noFileInput1 .nextSectionExpand1 img, main .inputParent1 .noFileInput0 .nextSectionExpand0 img, main .inputParent1 .noFileInput0 .nextSectionExpand1 img, main .inputParent1 .noFileInput1 .nextSectionExpand0 img, main .inputParent1 .noFileInput1 .nextSectionExpand1 img {
-  display: inline-block;
-  height: 100%;
-  width: 1.7em;
+main .inputParent0 .noFileInput0 .fileInpParent input:hover::before, main .inputParent0 .noFileInput1 .fileInpParent input:hover::before, main .inputParent1 .noFileInput0 .fileInpParent input:hover::before, main .inputParent1 .noFileInput1 .fileInpParent input:hover::before {
+  opacity: 1;
 }
 
-main .inputParent0 .noFileInput0 .nextSectionExpand0:hover, main .inputParent0 .noFileInput0 .nextSectionExpand1:hover, main .inputParent0 .noFileInput1 .nextSectionExpand0:hover, main .inputParent0 .noFileInput1 .nextSectionExpand1:hover, main .inputParent1 .noFileInput0 .nextSectionExpand0:hover, main .inputParent1 .noFileInput0 .nextSectionExpand1:hover, main .inputParent1 .noFileInput1 .nextSectionExpand0:hover, main .inputParent1 .noFileInput1 .nextSectionExpand1:hover {
+main .inputParent0 .noFileInput0 .fileInpParent input:hover::after, main .inputParent0 .noFileInput1 .fileInpParent input:hover::after, main .inputParent1 .noFileInput0 .fileInpParent input:hover::after, main .inputParent1 .noFileInput1 .fileInpParent input:hover::after {
+  top: -4px;
   opacity: 1;
+  border-bottom: 2px solid black;
 }
 
 main .inpPass0, main .inpPass1, main .result0, main .result1 {
@@ -82,7 +125,7 @@ main .inpPass0, main .inpPass1, main .result0, main .result1 {
   width: 90%;
 }
 
-main .encrypt .simpleButtons, main .decrypt .simpleButtons {
+main .encrypt .resultEncParent .simpleButtons, main .encrypt .resultDecParent .simpleButtons, main .decrypt .resultEncParent .simpleButtons, main .decrypt .resultDecParent .simpleButtons {
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -92,7 +135,7 @@ main .encrypt .simpleButtons, main .decrypt .simpleButtons {
   width: 90%;
 }
 
-main .encrypt .simpleButtons *, main .decrypt .simpleButtons * {
+main .encrypt .resultEncParent .simpleButtons *, main .encrypt .resultDecParent .simpleButtons *, main .decrypt .resultEncParent .simpleButtons *, main .decrypt .resultDecParent .simpleButtons * {
   padding: 0.5em;
   -ms-flex-preferred-size: 45%;
       flex-basis: 45%;
@@ -104,8 +147,49 @@ main .encrypt .simpleButtons *, main .decrypt .simpleButtons * {
   color: #dfe8ff;
 }
 
-main .encrypt .simpleButtons *:hover, main .decrypt .simpleButtons *:hover {
+main .encrypt .resultEncParent .simpleButtons *:hover, main .encrypt .resultDecParent .simpleButtons *:hover, main .decrypt .resultEncParent .simpleButtons *:hover, main .decrypt .resultDecParent .simpleButtons *:hover {
   background-color: #003380;
+}
+
+main .encrypt .resultEncParent .disabled, main .encrypt .resultDecParent .disabled, main .decrypt .resultEncParent .disabled, main .decrypt .resultDecParent .disabled {
+  background-color: cadetblue;
+  color: white;
+}
+
+main .encrypt .resultEncParent .disabled:hover, main .encrypt .resultDecParent .disabled:hover, main .decrypt .resultEncParent .disabled:hover, main .decrypt .resultDecParent .disabled:hover {
+  background-color: cadetblue;
+  color: white;
+}
+
+main .encrypt .resultEncParent .result-n-copy, main .encrypt .resultDecParent .result-n-copy, main .decrypt .resultEncParent .result-n-copy, main .decrypt .resultDecParent .result-n-copy {
+  position: relative;
+}
+
+main .encrypt .resultEncParent .result-n-copy .result0, main .encrypt .resultEncParent .result-n-copy .result1, main .encrypt .resultDecParent .result-n-copy .result0, main .encrypt .resultDecParent .result-n-copy .result1, main .decrypt .resultEncParent .result-n-copy .result0, main .decrypt .resultEncParent .result-n-copy .result1, main .decrypt .resultDecParent .result-n-copy .result0, main .decrypt .resultDecParent .result-n-copy .result1 {
+  height: 6em;
+}
+
+main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn0, main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn1, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn0, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn1, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn0, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn1, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn0, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn1 {
+  background-color: cadetblue;
+  padding: 0.5em;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 2em;
+  width: 2em;
+}
+
+main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn0 img, main .encrypt .resultEncParent .result-n-copy .floatingCopyBtn1 img, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn0 img, main .encrypt .resultDecParent .result-n-copy .floatingCopyBtn1 img, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn0 img, main .decrypt .resultEncParent .result-n-copy .floatingCopyBtn1 img, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn0 img, main .decrypt .resultDecParent .result-n-copy .floatingCopyBtn1 img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+main .encrypt .resultEncParent .result-n-copy .hide, main .encrypt .resultDecParent .result-n-copy .hide, main .decrypt .resultEncParent .result-n-copy .hide, main .decrypt .resultDecParent .result-n-copy .hide {
+  display: none;
 }
 
 main .encrypt {

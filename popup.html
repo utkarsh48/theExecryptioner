@@ -19,7 +19,6 @@
         <div class="inputParent0">
           <section class="noFileInput0">
             <textarea class="fileAlternative0" placeholder="Text to encrypt"></textarea>
-            <div class="nextSectionExpand0"><img src="/images/text-document-add.svg"></div>
             <section class="fileInpParent">
               <input class="inputFile0" type="file">
             </section>
@@ -28,10 +27,15 @@
         </div>
         <div class="resultEncParent">
           <section class="simpleButtons">
-            <button class="subBtn0">Submit</button>
-            <a class="resultSave0" href="">Save as file</a>
+            <button class="subBtn0 disabled">Submit</button>
+            <a class="resultSave0 disabled" href="">Save as file</a>
           </section>
-          <textarea class="result0" placeholder="Result"></textarea>
+          <section class="result-n-copy">
+            <textarea class="result0" placeholder="Result"></textarea>
+            <div class="floatingCopyBtn0 hide">
+              <img src="/images/copy.svg">
+            </div>
+          </section>
         </div>
       </div>
 
@@ -42,7 +46,6 @@
         <div class="inputParent1">
           <section class="noFileInput1">
             <textarea class="fileAlternative1" placeholder="Text to decrypt"></textarea>
-            <div class="nextSectionExpand1"><img src="/images/text-document-add.svg"></div>
             <section class="fileInpParent">
               <input class="inputFile1" type="file">
             </section>
@@ -51,12 +54,18 @@
         </div>
         <div class="resultDecParent">
           <section class="simpleButtons">
-            <button class="subBtn1">Submit</button>
-            <a class="resultSave1" href="">Save as file</a>
+            <button class="subBtn1 disabled">Submit</button>
+            <a class="resultSave1 disabled" href="">Save as file</a>
           </section>
-          <textarea class="result1" placeholder="Result"></textarea>
+          <section class="result-n-copy">
+            <textarea class="result1" placeholder="Result"></textarea>
+            <div class="floatingCopyBtn1 hide">
+              <img src="/images/copy.svg">
+            </div>
+          </section>
         </div>
       </div>
+
     </main>
     <script src="sjcl.js"></script>
     <script src="popup.js"></script>
