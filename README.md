@@ -1,3 +1,4 @@
+
 # theExecryptioner
 This is a chrome extension for encrypting text files and vice-versa.
 
@@ -18,3 +19,8 @@ This is a chrome extension for encrypting text files and vice-versa.
 5. Navigate to folder containing 'manifest.json' file, Select that folder.
 6. Click 'open'.
 7. There You Go!
+
+## Simple and Sleek UI
+
+![Encrypt](https://raw.githubusercontent.com/utkarsh48/theExecryptioner/master/Encrypt.PNG)
+![Decrypt](https://raw.githubusercontent.com/utkarsh48/theExecryptioner/master/Decrypt.PNG)
